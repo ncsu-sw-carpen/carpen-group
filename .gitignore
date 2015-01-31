@@ -1,3 +1,9 @@
+## Added by xian, Rstudio/group specific:
+# generated from markdown/.md, we're not writing html
+*.html
+.Rhistory
+*.Rproj
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -52,3 +58,4 @@ docs/_build/
 
 # PyBuilder
 target/
+.Rproj.user
