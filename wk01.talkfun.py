@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 ## Comments are lines starting with #
 ## except the very first line, which is special
 
@@ -7,7 +7,7 @@ def talk(say="Hello", to="World", sep=", "):
     retVar = say + sep + to
     return retVar
 
-print(talk())
+print(talk(to="Emily"))
 
 ## extra stuff for later
 #print dir(talk)
