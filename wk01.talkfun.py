@@ -4,10 +4,11 @@
 
 def talk(say="Hello", to="World", sep=", "):
     '''## This is the docstring of function talk. \n## This function takes 3 arguments: say (string), to (string), sep (string) .'''
+    ## in R, this would be c(say, sep, to) 
     retVar = say + sep + to
     return retVar
 
-print talk()
+talk(say="Goodbye cruel", sep=" ")
 
 ## extra stuff for later
 #print dir(talk)
