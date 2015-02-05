@@ -7,7 +7,7 @@ def talk(say="Hello", to="World", sep=", "):
     retVar = say + sep + to
     return retVar
 
-print talk()
+print talk(say="Goodbye Cruel", sep=" ")
 
 ## extra stuff for later
 #print dir(talk)
