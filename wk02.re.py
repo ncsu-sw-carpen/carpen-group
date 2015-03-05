@@ -3,11 +3,13 @@ import re
 wikiDir = "carpen-group.wiki/"
 dataFile = "HW02.md"
 fullname = wikiDir + dataFile
+print fullname
 f = open(fullname)
+print f
 
 ## for each line of file
 for line in f:
-    # print line
+    ##print line
     ## search for, e.g. 2015-01-01 00:00:01
     dateline = re.search('(\d+-\d+-\d+) (\d+:\d+:\d+).*', line)
     ## if there's *any* match
