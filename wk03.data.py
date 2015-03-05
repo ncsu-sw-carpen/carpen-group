@@ -1,8 +1,11 @@
-import re, csv
+import re, csv, pdb
 
 ## csv of experimental data
 dataFile = 'data/swc.chemA.csv'
 filehandle = open(dataFile)
+
+## open debugging, move this chunk around as needed
+pdb.set_trace()
 
 ## read the csv into a dictionary-like object
 ## see https://docs.python.org/2/library/csv.html
