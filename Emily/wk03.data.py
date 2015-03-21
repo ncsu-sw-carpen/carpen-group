@@ -4,15 +4,18 @@ import re, csv, pdb
 #pdb.set_trace()
 
 ## csv of experimental data
-dataFile = 'data/swc.chemA.csv'
+dataFile = '../data/swc.chemA.csv'
 filehandle = open(dataFile)
 
 ## read the csv into a dictionary-like object
 ## see https://docs.python.org/2/library/csv.html
 geneExpr = csv.DictReader(filehandle)
 
+#for row in geneExpr:
+#	print(row)
+
 ## look at one line
-row01 = geneExpr.next()
+row01 = geneExpr.__next__() ## .next() did not work. Python 3 thing?
 print ('\nData columns: ')
 print (row01.keys())
 print ('\nData values: ')
@@ -36,7 +39,7 @@ for thisRow in geneExpr:
         ## exit the for loop
         break
 
-raw_input('\nHit enter to continue\n')
+raw_input=('\nHit enter to continue\n')
 parenPatt = '\((\w+)\)'
 ii = 0
 print ("Row\t\tgroup(0)\t\tgroup(1)")
