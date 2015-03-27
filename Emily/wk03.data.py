@@ -4,7 +4,7 @@ import re, csv, pdb
 #pdb.set_trace()
 
 ## csv of experimental data
-dataFile = '../data/swc.chemA.csv'
+dataFile = 'data/swc.chemA.csv'
 filehandle = open(dataFile)
 
 ## read the csv into a dictionary-like object
@@ -39,7 +39,7 @@ for thisRow in geneExpr:
         ## exit the for loop
         break
 
-raw_input=('\nHit enter to continue\n')
+input('\nHit enter to continue\n') ## In Python 2 this is raw_input
 parenPatt = '\((\w+)\)'
 ii = 0
 print ("Row\t\tgroup(0)\t\tgroup(1)")
