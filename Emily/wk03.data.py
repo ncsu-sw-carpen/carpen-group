@@ -39,10 +39,12 @@ for thisRow in geneExpr:
         ## exit the for loop
         break
 
-input('\nHit enter to continue\n') ## In Python 2 this is raw_input
+input('\nHit enter to continue\n') ## In Python 2 this was raw_input
 parenPatt = '\((\w+)\)'
 ii = 0
-print ("Row\t\tgroup(0)\t\tgroup(1)")
+colspace="\t"
+linepattern="%d" + colspace + "%s" + colspace + "%s"
+print ("Row", colspace, "group(0)", colspace, "group(1)")
 for thisRow in geneExpr:
     ii += 1
     ## search for, e.g. 2015-01-01 00:00:01
@@ -51,4 +53,4 @@ for thisRow in geneExpr:
     if (gene):
         #print line
         ## print the pattern in the second group of parens 
-        print ("%d\t\t%s\t\t%s" % ( ii, gene.group(0), gene.group(1)))
+        print (linepattern % (ii, gene.group(0), gene.group(1)))
