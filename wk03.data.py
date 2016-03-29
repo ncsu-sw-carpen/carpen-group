@@ -4,8 +4,6 @@ import re, csv, pdb
 dataFile = 'data/swc.chemA.csv'
 filehandle = open(dataFile)
 
-## open debugging, move this chunk around as needed
-pdb.set_trace()
 
 ## read the csv into a dictionary-like object
 ## see https://docs.python.org/2/library/csv.html
@@ -19,6 +17,9 @@ print '\nData values: '
 print row01.values()
 print '\nPrinting gene value: ' + row01['gene']
 
+## open debugging, move this chunk around as needed
+pdb.set_trace()
+
 ## We can access values using a named variable 
 colName = 'Annotation'
 ## this is "fancy" string formatting in python
@@ -26,11 +27,14 @@ print 'Row01 has value %s for column %s\n' % (row01[colName], colName)
 
 ## try to put "hard-coded" values in named variables
 nlim = 5
+mysum = 0
 ii = 0
 print "Printing %d rows of %s" % (nlim, colName)
 ## for each row 
 for thisRow in geneExpr:
-    print thisRow[colName]
+    #print thisRow[colName]
+    mysum = mysum +  float(thisRow['value_1'])
+    print(thisRow['value_1'])
     ii += 1
     if (ii > nlim ): 
         ## exit the for loop
