@@ -1,8 +1,5 @@
 import re, csv, pdb
 
-## open debugging, move this chunk around as needed
-#pdb.set_trace()
-
 ## csv of experimental data
 dataFile = 'data/swc.chemA.csv'
 filehandle = open(dataFile)
@@ -13,19 +10,16 @@ geneExpr = csv.DictReader(filehandle)
 
 ## look at one line
 row01 = geneExpr.next()
-print '\nData columns: '
+print '\nData columns: ' 
 print row01.keys()
-print '\nData values: '
+print '\nData values: ' 
 print row01.values()
 print '\nPrinting gene value: ' + row01['gene']
-
-## open debugging, move this chunk around as needed
-pdb.set_trace()
 
 ## We can access values using a named variable 
 colName = 'Annotation'
 ## this is "fancy" string formatting in python
-print 'Row01 has value %s for column %s\n' % (row01[colName], colName)
+print 'Row01 has value %s for column %s\n' % (row01[colName], colName) 
 
 ## try to put "hard-coded" values in named variables
 nlim = 5
@@ -35,14 +29,17 @@ print "Printing %d rows of %s" % (nlim, colName)
 ## for each row 
 for thisRow in geneExpr:
     #print thisRow[colName]
-    mysum = mysum +  float(thisRow['value_1'])
-    print(thisRow['value_1'])
-    ii += 1
-    if (ii > nlim ): 
+    mysum = mysum + float(thisRow['value_1'])
+    #ii += 1
+    #if (ii > nlim ): 
         ## exit the for loop
-        break
+        ##break
+print 'the sum is %f' % mysum
 
-raw_input=('\nHit enter to continue\n')
+## open debugging, move this chunk around as needed
+pdb.set_trace()
+
+raw_input('\nHit enter to continue\n')
 parenPatt = '\((\w+)\)'
 ii = 0
 print "Row\t\tgroup(0)\t\tgroup(1)"
